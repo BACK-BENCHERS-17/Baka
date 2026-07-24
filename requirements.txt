@@ -12,3 +12,4 @@ openai
 httpx
 pytz
 emoji
+python-3.12.10
