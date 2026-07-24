@@ -37,8 +37,14 @@ from handlers.topkill import topkill
 from handlers.check import check
 
 # Games
-from handlers.bomb_game import bomb, join, pass_bomb, myrank, leaders
-from handlers.word_game import wordgame, enter, word_listener, word_button
+from handlers.bomb_game import bomb, pass_bomb, myrank, leaders
+from handlers.word_game import wordgame, word_listener, word_button
+from handlers.card_game import card_cmd, bet_cmd, flip_cmd
+from handlers.bluff_game import bluff_cmd, drop_cmd, judge_cmd
+from handlers.hack_game import hack_cmd, register_cmd, guess_cmd, end_hack_cmd
+from handlers.roulette_game import roulette_cmd, bid_cmd
+from handlers.game_router import join_router, enter_router
+from handlers.game_menu import game_menu
 
 # Fun
 from handlers.couples import couples
@@ -142,16 +148,42 @@ def main():
     app.add_handler(CommandHandler("item", item))
     app.add_handler(CommandHandler("gift", gift))
 
+    # Game menu
+    app.add_handler(CommandHandler("game", game_menu))
+
     # Bomb game
     app.add_handler(CommandHandler("bomb", bomb))
-    app.add_handler(CommandHandler("join", join))
     app.add_handler(CommandHandler("pass", pass_bomb))
     app.add_handler(CommandHandler("myrank", myrank))
+    app.add_handler(CommandHandler("rank", myrank))
     app.add_handler(CommandHandler("leaders", leaders))
+
+    # Card game
+    app.add_handler(CommandHandler("card", card_cmd))
+    app.add_handler(CommandHandler("bet", bet_cmd))
+    app.add_handler(CommandHandler("flip", flip_cmd))
+
+    # Bluff game
+    app.add_handler(CommandHandler("bluff", bluff_cmd))
+    app.add_handler(CommandHandler("drop", drop_cmd))
+    app.add_handler(CommandHandler("judge", judge_cmd))
+
+    # Hack game
+    app.add_handler(CommandHandler("hack", hack_cmd))
+    app.add_handler(CommandHandler("register", register_cmd))
+    app.add_handler(CommandHandler("guess", guess_cmd))
+    app.add_handler(CommandHandler("end", end_hack_cmd))
+
+    # Roulette game
+    app.add_handler(CommandHandler("roulette", roulette_cmd))
+    app.add_handler(CommandHandler("bid", bid_cmd))
+
+    # Smart routers — /join → roulette or bomb | /enter → bluff or word game
+    app.add_handler(CommandHandler("join", join_router))
+    app.add_handler(CommandHandler("enter", enter_router))
 
     # Word game
     app.add_handler(CommandHandler("wordgame", wordgame))
-    app.add_handler(CommandHandler("enter", enter))
     app.add_handler(CallbackQueryHandler(word_button, pattern="^word:"))
 
     # Fun / couples
