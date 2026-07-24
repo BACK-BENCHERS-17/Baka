@@ -10,4 +10,5 @@ Pillow
 google-generativeai
 openai
 httpx
+pytz
 emoji
