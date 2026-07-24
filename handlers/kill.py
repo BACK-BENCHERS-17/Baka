@@ -27,7 +27,8 @@ async def kill(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # Group only
     if chat.type == "private":
-        await message.reply_text("⚠️ Reply to someone to kill them.")
+        from utils.permissions import GROUP_ONLY_MSG
+        await message.reply_text(GROUP_ONLY_MSG, parse_mode="HTML")
         return
     
     # Check if economy is enabled in this group

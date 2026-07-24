@@ -11,6 +11,12 @@ from utils.helpers import get_mention_html
 
 async def gift(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Handle /gift command"""
+    # Group only
+    if update.effective_chat.type == "private":
+        from utils.permissions import GROUP_ONLY_MSG
+        await update.message.reply_text(GROUP_ONLY_MSG, parse_mode="HTML")
+        return
+
     # Check reply
     if not update.message.reply_to_message or not update.message.reply_to_message.from_user:
         await update.message.reply_text("⚠️ Reply to the user you want to gift.")

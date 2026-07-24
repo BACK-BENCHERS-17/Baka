@@ -1,4 +1,18 @@
 from config import OWNER_IDS, BOT_USERNAME
+
+# Styled group-only message shown whenever a group command is used in DM
+GROUP_ONLY_MSG = (
+    "🏘️ <b>Gʀᴏᴜᴘ Oɴʟʏ Cᴏᴍᴍᴀɴᴅ!</b>\n\n"
+    "❌ Yᴇ ᴄᴏᴍᴍᴀɴᴅ ꜱɪʀꜰ <b>ɢʀᴏᴜᴘꜱ</b> ᴍᴇɪɴ ᴋᴀᴀᴍ ᴋᴀʀᴛᴀ ʜᴀɪ.\n\n"
+    "👥 Mᴜᴊʜᴇ ᴀᴘɴᴇ ɢʀᴏᴜᴘ ᴍᴇɪɴ ᴀᴅᴅ ᴋᴀʀᴏ ᴀᴜʀ ᴠᴀʜᴀɴ ᴘʟᴀʏ ᴋᴀʀᴏ! 🎮"
+)
+
+async def send_group_only(update) -> bool:
+    """Send a styled group-only error and return True if in private chat."""
+    if update.effective_chat.type == "private":
+        await update.message.reply_text(GROUP_ONLY_MSG, parse_mode="HTML")
+        return True
+    return False
 from database import get_economy_status
 
 async def is_economy_enabled(chat_id: int) -> bool:

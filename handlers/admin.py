@@ -43,6 +43,8 @@ async def warn(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     # Group only
     if chat.type == "private":
+        from utils.permissions import GROUP_ONLY_MSG
+        await update.message.reply_text(GROUP_ONLY_MSG, parse_mode="HTML")
         return
     
     # Check reply
@@ -100,6 +102,8 @@ async def mute(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     # Group only
     if chat.type == "private":
+        from utils.permissions import GROUP_ONLY_MSG
+        await update.message.reply_text(GROUP_ONLY_MSG, parse_mode="HTML")
         return
     
     # Check reply

@@ -28,7 +28,8 @@ async def rob(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # DM check
     if chat.type == "private":
-        await message.reply_text("⚠️ This command works in groups only.")
+        from utils.permissions import GROUP_ONLY_MSG
+        await message.reply_text(GROUP_ONLY_MSG, parse_mode="HTML")
         return
     
     # Check if economy is enabled in this group

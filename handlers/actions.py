@@ -35,7 +35,13 @@ REPLY_ERRORS = {
 async def action_handler(update: Update, context: ContextTypes.DEFAULT_TYPE, action: str):
     """Handle action commands (kiss, hug, slap, punch, bite)"""
     message = update.message
-    
+
+    # Group only
+    if update.effective_chat.type == "private":
+        from utils.permissions import GROUP_ONLY_MSG
+        await message.reply_text(GROUP_ONLY_MSG, parse_mode="HTML")
+        return
+
     # Check reply
     if not message.reply_to_message or not message.reply_to_message.from_user:
         error_msg = REPLY_ERRORS.get(action, "Reply to someone!")

@@ -10,7 +10,8 @@ async def brain(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     # Group only
     if chat.type == "private":
-        await update.message.reply_text("🚫 You can use this command in groups only !")
+        from utils.permissions import GROUP_ONLY_MSG
+        await update.message.reply_text(GROUP_ONLY_MSG, parse_mode="HTML")
         return
     
     # Check reply
@@ -34,7 +35,8 @@ async def look(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     # Group only
     if chat.type == "private":
-        await update.message.reply_text("🚫 You can use this command in groups only !")
+        from utils.permissions import GROUP_ONLY_MSG
+        await update.message.reply_text(GROUP_ONLY_MSG, parse_mode="HTML")
         return
     
     # Check reply
@@ -58,7 +60,8 @@ async def stupid_meter(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     # Group only
     if chat.type == "private":
-        await update.message.reply_text("🚫 You can use this command in groups only !")
+        from utils.permissions import GROUP_ONLY_MSG
+        await update.message.reply_text(GROUP_ONLY_MSG, parse_mode="HTML")
         return
     
     # Check reply
@@ -85,7 +88,8 @@ async def love(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     # Group only
     if chat.type == "private":
-        await update.message.reply_text("🚫 You can use this command in groups only !")
+        from utils.permissions import GROUP_ONLY_MSG
+        await update.message.reply_text(GROUP_ONLY_MSG, parse_mode="HTML")
         return
     
     # Check reply
@@ -118,7 +122,8 @@ async def crush(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     # Group only
     if chat.type == "private":
-        await update.message.reply_text("🚫 You can use this command in groups only !")
+        from utils.permissions import GROUP_ONLY_MSG
+        await update.message.reply_text(GROUP_ONLY_MSG, parse_mode="HTML")
         return
     
     # Check reply
