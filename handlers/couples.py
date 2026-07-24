@@ -44,10 +44,10 @@ async def couples(update: Update, context: ContextTypes.DEFAULT_TYPE):
     selected = random.sample(members, 2)
     user1, user2 = selected[0], selected[1]
     
-    # Special case: If Baka is selected, pair with Blac
+    # Special case: If Baka is selected, pair with Khushi
     if is_baka_bot(user1) or is_baka_bot(user2):
         # For simplicity, we'll just use the two selected users
-        # In production, you'd want to fetch a specific user (Blac) from your config
+        # In production, you'd want to fetch a specific user (Khushi) from your config
         pass
     
     # Send GIF

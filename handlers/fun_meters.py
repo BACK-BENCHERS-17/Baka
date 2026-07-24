@@ -130,7 +130,7 @@ async def crush(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     # Special case: Baka bot
     if is_baka_bot(target):
-        await update.message.reply_text(f"💘 Baka's crush is Blac\nCrush level: ∞ ❤️")
+        await update.message.reply_text(f"💘 Baka's crush is Khushi\nCrush level: ∞ ❤️")
         return
     
     # Try to get random group member (simplified)
