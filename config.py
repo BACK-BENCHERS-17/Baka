@@ -1,13 +1,13 @@
 # Bot Credentials
-BOT_TOKEN = "8709056396:AAHD0njwrymT9SM-GgUh_kpNzcjMcrDDyuw"
-BOT_USERNAME = "Im_BakaaBot"
+BOT_TOKEN = "8878606971:AAFBNCpMrp26YjWj-td8JcruY5xTyLbLuWA"
+BOT_USERNAME = "Ghop_BakaBot"
 
 # Groq AI
 GROQ_API_KEY = "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"
 AI_MODEL = "llama-3.1-8b-instant"
 
 # Owner
-OWNER_IDS = {8537538760}
+OWNER_IDS = {7378164883}
 
 # AI Settings
 MAX_MEMORY_MESSAGES = 5
@@ -56,10 +56,10 @@ WORD_LENGTH = 16
 COUPLES_COOLDOWN = 300  # 5 minutes
 
 # URLs
-PAYMENT_LINK = "https://t.me/NottBlac"
-OWNER_PROFILE = "https://t.me/NottBlac"  # Replace with actual
-FRIENDS_GROUP = "https://t.me/DilDostiDrinks"  # Replace with actual
-GAMES_GROUP = "https://t.me/blacwordseek"  # Replace with actual
+PAYMENT_LINK = "https://t.me/xorib"
+OWNER_PROFILE = "https://t.me/xorib"  # Replace with actual
+FRIENDS_GROUP = "https://t.me/BotXCore"  # Replace with actual
+GAMES_GROUP = "https://t.me/BotXCorr"  # Replace with actual
 
 # Database
 DB_PATH = "baka.db"
