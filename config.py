@@ -1,11 +1,11 @@
 import os
 
 # Bot Credentials
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "8878606971:AAFBNCpMrp26YjWj-td8JcruY5xTyLbLuWA")
 BOT_USERNAME = "Ghop_BakaBot"
 
 # Groq AI
-GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "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")
 AI_MODEL = "llama-3.1-8b-instant"
 
 # Owner
