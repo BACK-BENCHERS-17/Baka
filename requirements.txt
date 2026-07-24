@@ -1,0 +1,11 @@
+python-telegram-bot>=21.0
+motor
+pymongo
+python-dotenv
+aiohttp
+requests
+Pillow
+google-generativeai
+openai
+httpx
+emoji
