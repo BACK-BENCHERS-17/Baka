@@ -44,11 +44,11 @@ PREMIUM_CAPTION = (
 def premium_keyboard():
     return InlineKeyboardMarkup([
         [
-            InlineKeyboardButton("💳 𝐁𝐮𝐲 𝐍𝐨𝐰 — ₹𝟏𝟗", url=OWNER_PROFILE),
+            InlineKeyboardButton("🟢 💳 𝐁𝐮𝐲 𝐍𝐨𝐰 — ₹𝟏𝟗", url=OWNER_PROFILE),
         ],
         [
-            InlineKeyboardButton("💌 𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐎𝐰𝐧𝐞𝐫", url=OWNER_PROFILE),
-            InlineKeyboardButton("🌸 𝐕𝐢𝐞𝐰 𝐐𝐑", callback_data="prem_qr"),
+            InlineKeyboardButton("🔵 💌 𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐎𝐰𝐧𝐞𝐫", url=OWNER_PROFILE),
+            InlineKeyboardButton("🩷 🌸 𝐕𝐢𝐞𝐰 𝐐𝐑", callback_data="prem_qr"),
         ],
     ])
 

@@ -78,7 +78,7 @@ logger = logging.getLogger(__name__)
 
 
 def main():
-    asyncio.get_event_loop().run_until_complete(init_db())
+    asyncio.run(init_db())
 
     app = Application.builder().token(BOT_TOKEN).build()
 

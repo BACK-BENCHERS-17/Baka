@@ -90,7 +90,7 @@ async def admin_panel(update: Update, context: ContextTypes.DEFAULT_TYPE):
         # Owner sees full owner panel + toggle button for mod cmds
         keyboard = InlineKeyboardMarkup([
             [
-                InlineKeyboardButton("🛡️ Mᴏᴅᴇʀᴀᴛɪᴏɴ Cᴍᴅs", callback_data="adminp_mod"),
+                InlineKeyboardButton("🔴 🛡️ Mᴏᴅᴇʀᴀᴛɪᴏɴ Cᴍᴅs", callback_data="adminp_mod"),
             ]
         ])
         await update.message.reply_text(
@@ -114,7 +114,7 @@ async def admin_panel_callback(update: Update, context: ContextTypes.DEFAULT_TYP
             await query.answer("❌ Sirf owner dekh sakta hai!", show_alert=True)
             return
         back_kb = InlineKeyboardMarkup([
-            [InlineKeyboardButton("🔙 Owner Panel", callback_data="adminp_back")]
+            [InlineKeyboardButton("⬅️ 👑 Owner Panel", callback_data="adminp_back")]
         ])
         await query.edit_message_text(
             ADMIN_MOD_TEXT,
@@ -128,7 +128,7 @@ async def admin_panel_callback(update: Update, context: ContextTypes.DEFAULT_TYP
             return
         keyboard = InlineKeyboardMarkup([
             [
-                InlineKeyboardButton("🛡️ Mᴏᴅᴇʀᴀᴛɪᴏɴ Cᴍᴅs", callback_data="adminp_mod"),
+                InlineKeyboardButton("🔴 🛡️ Mᴏᴅᴇʀᴀᴛɪᴏɴ Cᴍᴅs", callback_data="adminp_mod"),
             ]
         ])
         await query.edit_message_text(

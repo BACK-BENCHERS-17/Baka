@@ -37,10 +37,13 @@ async def addpremium(update: Update, context: ContextTypes.DEFAULT_TYPE):
     else:
         name = f"User {uid}"
     
-    # Format expiry date
+    # Format expiry date — cap at year 3000 to avoid ValueError
     from datetime import datetime
-    expiry_date = datetime.fromtimestamp(expiry).strftime("%Y-%m-%d %H:%M")
-    
+    try:
+        expiry_date = datetime.fromtimestamp(min(expiry, 32503680000)).strftime("%Y-%m-%d %H:%M")
+    except (ValueError, OSError):
+        expiry_date = "Extended"
+
     await update.message.reply_text(
         f"✅ Premium activated for {name}\n"
         f"⏳ Duration: {days} days\n"

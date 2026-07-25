@@ -11,20 +11,20 @@ from utils.permissions import is_admin
 def start_keyboard():
     return InlineKeyboardMarkup([
         [
-            InlineKeyboardButton("💬 Tᴀʟᴋ ᴛᴏ Bᴀᴋᴀ", callback_data="talk_baka"),
-            InlineKeyboardButton("📖 Hᴇʟᴘ & Cᴍᴅs", callback_data="help_home"),
+            InlineKeyboardButton("🟣 💬 Tᴀʟᴋ ᴛᴏ Bᴀᴋᴀ", callback_data="talk_baka"),
+            InlineKeyboardButton("🔵 📖 Hᴇʟᴘ & Cᴍᴅs", callback_data="help_home"),
         ],
         [
-            InlineKeyboardButton("🎮 Gᴀᴍᴇs", callback_data="help_games"),
-            InlineKeyboardButton("🛡️ Aᴅᴍɪɴ Pᴀɴᴇʟ", callback_data="help_admin"),
+            InlineKeyboardButton("🟢 🎮 Gᴀᴍᴇs", callback_data="help_games"),
+            InlineKeyboardButton("🔴 🛡️ Aᴅᴍɪɴ Pᴀɴᴇʟ", callback_data="help_admin"),
         ],
         [
-            InlineKeyboardButton("🥀 Kʜᴜsʜɪ", url=OWNER_PROFILE),
-            InlineKeyboardButton("🧸 Fʀɪᴇɴᴅs", url=FRIENDS_GROUP),
+            InlineKeyboardButton("🩷 🥀 Kʜᴜsʜɪ", url=OWNER_PROFILE),
+            InlineKeyboardButton("🟡 🧸 Fʀɪᴇɴᴅs", url=FRIENDS_GROUP),
         ],
         [
             InlineKeyboardButton(
-                "➕ Aᴅᴅ Mᴇ ᴛᴏ Yᴏᴜʀ Gʀᴏᴜᴘ 👥",
+                "🟠 ➕ Aᴅᴅ Mᴇ ᴛᴏ Yᴏᴜʀ Gʀᴏᴜᴘ 👥",
                 url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
             )
         ]
@@ -34,15 +34,15 @@ def start_keyboard():
 def help_home_keyboard():
     return InlineKeyboardMarkup([
         [
-            InlineKeyboardButton("💰 Economy", callback_data="help_economy"),
-            InlineKeyboardButton("🎮 Games",   callback_data="help_games"),
+            InlineKeyboardButton("🟡 💰 Economy",      callback_data="help_economy"),
+            InlineKeyboardButton("🟢 🎮 Games",        callback_data="help_games"),
         ],
         [
-            InlineKeyboardButton("🎭 Fun & Actions", callback_data="help_fun"),
-            InlineKeyboardButton("🛡️ Admin Cmds",    callback_data="help_admin"),
+            InlineKeyboardButton("🟣 🎭 Fun & Actions", callback_data="help_fun"),
+            InlineKeyboardButton("🔴 🛡️ Admin Cmds",   callback_data="help_admin"),
         ],
         [
-            InlineKeyboardButton("🔙 Back to Start", callback_data="back_start"),
+            InlineKeyboardButton("⬅️ 🏠 Back to Start", callback_data="back_start"),
         ]
     ])
 
@@ -50,8 +50,8 @@ def help_home_keyboard():
 def back_help_keyboard():
     return InlineKeyboardMarkup([
         [
-            InlineKeyboardButton("🔙 Hᴇʟᴘ Mᴇɴᴜ", callback_data="help_home"),
-            InlineKeyboardButton("🏠 Sᴛᴀʀᴛ",     callback_data="back_start"),
+            InlineKeyboardButton("🔵 📖 Help Menu", callback_data="help_home"),
+            InlineKeyboardButton("🏠 Start",        callback_data="back_start"),
         ]
     ])
 
