@@ -14,6 +14,7 @@ from ai.chat_handler import handle_ai_chat
 
 # Start
 from handlers.start import start, start_callback
+from handlers.admin_panel import admin_panel, admin_panel_callback
 
 # Basic
 from handlers.help import help_cmd
@@ -101,9 +102,16 @@ def main():
         group=-7
     )
 
-    # Start + Talk To Baka callback
+    # Start + all help/nav callbacks
     app.add_handler(CommandHandler("start", start))
-    app.add_handler(CallbackQueryHandler(start_callback, pattern="^talk_baka$"))
+    app.add_handler(CallbackQueryHandler(
+        start_callback,
+        pattern="^(talk_baka|help_home|help_economy|help_games|help_fun|help_admin|back_start)$"
+    ))
+
+    # Admin panel command + its callbacks
+    app.add_handler(CommandHandler("admin", admin_panel))
+    app.add_handler(CallbackQueryHandler(admin_panel_callback, pattern="^adminp_"))
 
     # Admin moderation
     app.add_handler(CommandHandler("warn", warn))

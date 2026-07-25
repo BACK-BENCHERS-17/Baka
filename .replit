@@ -20,6 +20,7 @@ args = "Start Bot"
 
 [[workflows.workflow]]
 name = "Start Bot"
+mode = "sequential"
 author = "agent"
 
 [[workflows.workflow.tasks]]
