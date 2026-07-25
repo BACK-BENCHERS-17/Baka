@@ -487,13 +487,15 @@ async def add_premium(user_id: int, days: int):
         cursor = await db.execute("SELECT premium_until FROM users WHERE user_id=?", (user_id,))
         row = await cursor.fetchone()
         
-        if row and row[0]:
-            # Extend from max(now, current_expiry)
-            current_expiry = max(current_time, row[0])
-            new_expiry = current_expiry + (days * 86400)
+        # 32503680000 = year 3000 cap; sanitise corrupt/huge stored values
+        MAX_TS = 32503680000
+        if row and row[0] and current_time < row[0] < MAX_TS:
+            # Extend from current expiry if it is still in the future
+            new_expiry = row[0] + (days * 86400)
         else:
             # Start from now
             new_expiry = current_time + (days * 86400)
+        new_expiry = min(new_expiry, MAX_TS)
         
         await db.execute("UPDATE users SET premium_until=?, notified_24h=0, notified_1h=0 WHERE user_id=?", 
                         (new_expiry, user_id))

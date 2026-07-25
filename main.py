@@ -15,6 +15,7 @@ from ai.chat_handler import handle_ai_chat
 # Start
 from handlers.start import start, start_callback
 from handlers.admin_panel import admin_panel, admin_panel_callback
+from handlers.premium import premium_cmd, premium_callback
 
 # Basic
 from handlers.help import help_cmd
@@ -137,6 +138,10 @@ def main():
     app.add_handler(CommandHandler("ownercommands", ownercommands))
     app.add_handler(CommandHandler("setbal", setbal))
     app.add_handler(CommandHandler("resetbal", resetbal))
+
+    # Premium
+    app.add_handler(CommandHandler("premium", premium_cmd))
+    app.add_handler(CallbackQueryHandler(premium_callback, pattern="^prem_"))
 
     # Economy
     app.add_handler(CommandHandler("bal", bal))
